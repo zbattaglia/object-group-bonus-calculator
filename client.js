@@ -40,7 +40,9 @@ const employees = [
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
 
-$(document).ready(readyNow)
+$(document).ready(function(){
+  $( '#calculateButton' ).on( 'click', readyNow )
+});
 
 console.log( employees );
 
@@ -117,7 +119,7 @@ function readyNow() {
   el.empty(); 
   console.log(el);
   for (let i = 0; i < employeeBonusArray.length; i++) { 
-    el.append(`<li>` + employeeBonusArray[i].name + ' ' + employeeBonusArray[i].percentage + `</li>`)
+    el.append(`<li>` + employeeBonusArray[i].name + ': Bonus Percentage = ' + employeeBonusArray[i].bonusPercentage + `%, Employee bonus = $`  + employeeBonusArray[i].totalBonus + `, Employee total salary = $` + employeeBonusArray[i].totalCompensation  + `</li>`)
     console.log(el);
 
   }
